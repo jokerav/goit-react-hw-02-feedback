@@ -1,9 +1,8 @@
 import React from 'react';
-// const FeedbackOptions = ({ options }) =>
-//   options.map(option => <button>{option}</button>);
-
-function FeedbackOptions({ options }) {
-  return options.map(option => <button>{option}</button>);
-}
-
+const FeedbackOptions = ({ options, onLeaveFeedback }) =>
+  options.map(option => (
+    <button type="button" onClick={() => onLeaveFeedback(option)}>
+      {option}
+    </button>
+  ));
 export default FeedbackOptions;

@@ -12,6 +12,11 @@ export class App extends Component {
     neutral: this.props.neutral,
     bad: this.props.bad,
   };
+  leaveFeedback = option => {
+    this.setState(prevState => ({
+      [option]: prevState[option] + 1,
+    }));
+  };
 
   render() {
     return (
@@ -28,6 +33,7 @@ export class App extends Component {
         <Section title="Please leave a feedback">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.leaveFeedback}
           ></FeedbackOptions>
         </Section>
       </div>
