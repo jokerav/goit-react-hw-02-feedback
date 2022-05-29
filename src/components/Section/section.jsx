@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 function Section({ title, children }) {
   return (
     <div>
@@ -7,5 +8,8 @@ function Section({ title, children }) {
     </div>
   );
 }
+Section.propTypes = {
+  children: PropTypes.element,
+};
 
 export default Section;
